@@ -1,10 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import logo from '../assets/toothbrushes.svg';
 
 
 function HomePage() {
+
+    const history = useHistory();
+
+    function handleClick() {
+        history.push('/gaatjes')
+    }
+
+
+
   return (
     <div className="page-container">
       <PageHeader icon={logo} title="Tandartspraktijk de Tandenborstel" />
@@ -23,6 +32,14 @@ function HomePage() {
         similique sint vero? Accusamus aliquam aliquid blanditiis consequatur est et minima mollitia neque non, odit perspiciatis placeat
         provident quos, similique sit totam vero. Beatae consequatur cupiditate rerum?
       </p>
+
+
+        <button type="button" className="nav" onClick={handleClick}> Naar gaatjes info !
+        </button>
+
+
+
+
       <p>Leer <Link to="/tanden-bleken">hier</Link> meer over het bleken van tanden</p>
     </div>
   );
